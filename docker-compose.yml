@@ -14,7 +14,7 @@ services:
   signaling:
     build:
       context: .
-      dockerfile: Dockerfile.node
+      dockerfile: Dockerfile.1
     container_name: re10-signaling
     ports:
       - "3001:3001"
