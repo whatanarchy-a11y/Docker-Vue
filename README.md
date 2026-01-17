@@ -206,6 +206,46 @@ zip -r frontend-eb.zip Dockerrun.aws.json
 ![alt text](image-28.png)
 
 
+### S3 반영 확인
+![alt text](image-29.png)
+
+### 각자의 설정에 따라 여러 경우가 발생할 수 있음
+![alt text](image-30.png)
+```
+위의 경우는 S3 버킷 이름이 빈 문자열("")로 들어갔습니다.
+즉, GitHub Actions에서 EB_S3_BUCKET 값이 설정되지 않았거나 비어있어서, aws s3api create-bucket --bucket "" 같은 형태로 실행된 겁니다.
+
+1) 가장 먼저 확인할 것 (GitHub Actions Secrets)
+
+GitHub Repo → Settings → Secrets and variables → Actions → Secrets
+
+여기에 아래 값이 정확히 존재해야 합니다.
+
+EB_S3_BUCKET ✅ (현재 이게 비어있음)
+
+(추가로 쓰는 값들) AWS_REGION, AWS_ACCOUNT_ID, EB_APPLICATION_NAME, EB_ENVIRONMENT_NAME 등
+
+✅ 해결: EB_S3_BUCKET에 버킷 이름을 넣으세요. 예:
+
+my-app-eb-deploy-086015456585-ap-northeast-2
+
+S3 버킷 이름 규칙:
+
+전부 소문자 권장
+
+공백 금지
+
+3~63자 권장 (S3 실제 규칙)
+
+예: myapp-eb-bucket-086015456585
+```
+### 위의 경우 
+![alt text](image-31.png)
+
+
+
+
+
 ---
 ---
 ## Vite + Vue3 + TailwindCSS v3 기반 WebRTC 로컬 테스트 모듈 (영상통화 + 채팅 + 화면공유 + 파일전송)
