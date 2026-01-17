@@ -195,7 +195,7 @@ AWSServiceRoleForElasticBeanstalk 역할이 생성됩니다.
     "Update": "true"
   },
   "Ports": [
-    { "ContainerPort": 80 }
+    { "ContainerPort": "80" }
   ]
 }
 ```
@@ -273,13 +273,27 @@ EB_SIGNALING_ENVIRONMENT_NAME: 빈 값
     "Update": "true"
   },
   "Ports": [
-    { "ContainerPort": 3001 }
+    { "ContainerPort": "3001" }
   ]
 }
 ```
 ### 각 상황의 로그 분석
 ![alt text](image-35.png)
 
+### json 이름 잘 바꾸면서 저장 업로드 필요
+```
+kimdy@DESKTOP-CLQV18N:~/Docker-Vue$ zip -r frontend-eb.zip Dockerrun.aws.json
+  adding: Dockerrun.aws.json (deflated 19%)
+kimdy@DESKTOP-CLQV18N:~/Docker-Vue$ zip -r backend-eb.zip Dockerrun.aws.json
+  adding: Dockerrun.aws.json (deflated 19%)
+kimdy@DESKTOP-CLQV18N:~/Docker-Vue$ zip -r frontend-eb.zip Dockerrun.aws.json
+updating: Dockerrun.aws.json (deflated 19%)
+kimdy@DESKTOP-CLQV18N:~/Docker-Vue$ zip -r frontend-eb.zip Dockerrun.aws.json
+updating: Dockerrun.aws.json (deflated 19%)
+kimdy@DESKTOP-CLQV18N:~/Docker-Vue$ zip -r backend-eb.zip Dockerrun.aws.json
+updating: Dockerrun.aws.json (deflated 19%)
+kimdy@DESKTOP-CLQV18N:~/Docker-Vue$ 
+```
 
 
 ---
