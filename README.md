@@ -1,3 +1,35 @@
+# GH Action -> AWS ECR
+```
+이 워크플로우에서 쓰는 ${{ secrets.XXX }} 값들은 GitHub 리포지토리(또는 조직) 설정에 “Secrets”로 만들어야 합니다.
+워크플로우 파일 안에서 만드는 게 아니라, GitHub UI에서 등록해요.
+
+1) 어디에 만드나? (가장 일반: Repo Secrets)
+
+GitHub에서 해당 리포지토리 들어가기
+
+Settings
+
+왼쪽 메뉴 Secrets and variables → Actions
+
+New repository secret 클릭
+
+아래 이름/값을 각각 추가
+
+이 워크플로우가 요구하는 Secrets 목록
+
+AWS_REGION (예: ap-northeast-2)
+
+AWS_ACCOUNT_ID (예: 123456789012)
+
+ECR_FRONTEND_REPOSITORY (예: my-frontend)
+
+ECR_SIGNALING_REPOSITORY (예: my-signaling)
+
+AWS_ACCESS_KEY_ID
+
+AWS_SECRET_ACCESS_KEY
+```
+
 # Vite + Vue3 + TailwindCSS v3 기반 WebRTC 로컬 테스트 모듈 (영상통화 + 채팅 + 화면공유 + 파일전송)
 
 > 목표: **localhost**에서 “두 브라우저(또는 시크릿 탭)”로 쉽게 P2P WebRTC 기능을 테스트할 수 있는 최소/실전형 예제  
