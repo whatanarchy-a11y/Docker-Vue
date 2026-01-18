@@ -378,3 +378,18 @@ drwxr-xr-x. 8 root root  144 Jan 18 00:55 ..
 ![alt text](image-42.png)
 ![alt text](image-43.png)
 ![alt text](image-44.png)
+
+### Front End 의 nginx.conf 에서 서버의 URL 수정 필요
+```
+proxy_pass http://my-app-backend.eba-jnvhrxk5.ap-northeast-2.elasticbeanstalk.com;
+```
+
+### Front End OK 내역
+![alt text](image-45.png)
+```
+ws = new WebSocket("ws://localhost:3001")
+```
+위의 소스 부분이 있다면 수정
+```
+ws = new WebSocket("ws://my-app-backend.eba-jnvhrxk5.ap-northeast-2.elasticbeanstalk.com")
+```

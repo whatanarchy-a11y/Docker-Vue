@@ -14,4 +14,4 @@ wss.on("connection", ws => {
   })
 })
 
-console.log("✅ Signaling server running on ws://localhost:3001")
+console.log("✅ Signaling server running on ws://my-app-backend.eba-jnvhrxk5.ap-northeast-2.elasticbeanstalk.com")

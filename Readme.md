@@ -119,7 +119,7 @@ wss.on("connection", (ws) => {
   })
 })
 
-console.log("✅ Signaling server running on ws://localhost:3001")
+console.log("✅ Signaling server running on ws://my-app-backend.eba-jnvhrxk5.ap-northeast-2.elasticbeanstalk.com")
 ```
 
 > 만약 CommonJS(require)로 쓰고 싶다면:
@@ -154,7 +154,7 @@ const { WebSocketServer } = require("ws")
 
 ```bash
 node signal.js
-# ✅ Signaling server running on ws://localhost:3001
+# ✅ Signaling server running on ws://my-app-backend.eba-jnvhrxk5.ap-northeast-2.elasticbeanstalk.com
 ```
 
 ### 6-2) Vue 앱 실행
