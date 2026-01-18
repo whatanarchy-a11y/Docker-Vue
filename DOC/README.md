@@ -393,3 +393,7 @@ ws = new WebSocket("ws://localhost:3001")
 ```
 ws = new WebSocket("ws://my-app-backend.eba-jnvhrxk5.ap-northeast-2.elasticbeanstalk.com")
 ```
+
+### todo
+> .env 를 이용한 dev, prod 의 환경 구성
+> ECR 이미지의 latest 버젼으로 배포 자동 구성 또는 최종 태그 이미지만 반영
